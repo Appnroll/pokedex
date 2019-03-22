@@ -49,6 +49,7 @@ class MainActivity: AppCompatActivity() {
 
         initTasksRecyclerView()
         refreshProgress(false)
+        renderPokemon(null)
     }
 
     private fun refreshButtonGo() {
@@ -77,9 +78,8 @@ class MainActivity: AppCompatActivity() {
             override fun onResponse(call: Call<GraphContainer<PokemonData>>, response: Response<GraphContainer<PokemonData>>) {
                 refreshProgress(false)
                 val pokemon = response.body()?.data?.pokemon
-                if (pokemon != null) {
-                    renderPokemon(pokemon)
-                } else {
+                renderPokemon(pokemon)
+                if (pokemon == null) {
                     Toast.makeText(this@MainActivity, "Pokemon not found", Toast.LENGTH_SHORT).show()
                 }
             }
@@ -96,13 +96,14 @@ class MainActivity: AppCompatActivity() {
         if (pokemon != null) {
             nameText.text = "Name: ${pokemon.name}"
             numberText.text = "Number: ${pokemon.number}"
-            evolutionsText.visibility = View.VISIBLE
         } else {
             nameText.text = ""
             numberText.text = ""
-            evolutionsText.visibility = View.INVISIBLE
         }
 
-        adapter.updateList(pokemon?.evolutions ?: emptyList())
+        val evolutions = pokemon?.evolutions ?: emptyList()
+        evolutionsText.visibility = if (evolutions.isEmpty()) View.INVISIBLE else View.VISIBLE
+
+        adapter.updateList(evolutions)
     }
 }

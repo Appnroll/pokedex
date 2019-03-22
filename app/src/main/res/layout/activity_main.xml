@@ -89,9 +89,10 @@
         <TextView
             style="@style/Text.Normal"
             android:id="@+id/evolutionsText"
+            android:paddingTop="4dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Evolutions:"/>
+            android:text="@string/main_label_evolutions"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"

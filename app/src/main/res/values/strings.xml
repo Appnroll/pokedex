@@ -5,4 +5,5 @@
 
     <string name="main_title">Find your Pokémon!!!</string>
     <string name="main_input_hint">Name</string>
+    <string name="main_label_evolutions">Evolutions:</string>
 </resources>
