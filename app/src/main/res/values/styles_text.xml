@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Text">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="fontFamily">@font/pokemon_regular</item>
+    </style>
+
+    <!-- TextTiny - 10sp -->
+    <style name="Text.Tiny">
+        <item name="android:textSize">@dimen/text_size_tiny</item>
+    </style>
+
+
+    <!-- TextSmall - 12sp -->
+    <style name="Text.Small">
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+
+    <!-- TextNormal - 14sp -->
+    <style name="Text.Normal">
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+
+
+    <!-- TextLarge - 16sp -->
+    <style name="Text.Large">
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
+
+
+    <!-- TextBig - 18sp -->
+    <style name="Text.Big">
+        <item name="android:textSize">@dimen/text_size_big</item>
+    </style>
+
+</resources>

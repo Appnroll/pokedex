@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.appnroll.graphql"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation DependenciesCore.kotlinStdLib
+
+    implementation DependenciesJetpack.androidxCoreKtxLib
+    implementation DependenciesJetpack.androidxAppcompatLib
+    implementation DependenciesJetpack.androidxConstraintLayoutLib
+    implementation DependenciesJetpack.androidxLegacySupportLib
+
+    implementation DependenciesCore.koinLib
+
+    implementation DependenciesCore.rxAndroidLib
+    implementation DependenciesCore.rxKotlinLib
+    implementation DependenciesCore.rxRelayLib
+
+    implementation DependenciesCore.retrofitLib
+    implementation DependenciesCore.retrofitGsonConverterLib
+    implementation DependenciesCore.retrofitOkHttpLoggingInterceptorLib
+    implementation DependenciesCore.retrofitSynchronousAdapterLib
+
+    implementation 'com.github.AniTrend:retrofit-graphql:0.9'
+
+    // Unit tests
+    testImplementation DependenciesTesting.junitLib
+    testImplementation DependenciesTesting.mockitoLib
+    testImplementation DependenciesTesting.powerMockMockitoLib
+    testImplementation DependenciesTesting.powerMockJunitLib
+
+    // UI tests
+    androidTestImplementation DependenciesTesting.androidxTestRunnerLib
+    androidTestImplementation DependenciesTesting.espressoLib
+}

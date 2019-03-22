@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp">
+
+    <TextView
+        style="@style/Text.Small"
+        android:id="@+id/nameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Name: Pikachu"/>
+
+    <TextView
+        style="@style/Text.Small"
+        android:id="@+id/numberText"
+        android:paddingTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Number: 2345"/>
+
+    <TextView
+        android:id="@+id/weightText"
+        style="@style/Text.Tiny"
+        android:paddingTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Weight: 10kg - 30kg"/>
+
+
+</LinearLayout>

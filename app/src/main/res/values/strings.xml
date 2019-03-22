@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Pokédex</string>
+
+    <string name="button_go">Go</string>
+
+    <string name="main_title">Find your Pokémon!!!</string>
+    <string name="main_input_hint">Name</string>
+</resources>
